@@ -17,7 +17,8 @@ function employee(name, salary) {
         salary: salary,
         sayHello: sayHello,
         increaseSalary: increaseSalary,
-        addFriend: addFriend
+        addFriend: addFriend,
+        friends: 0
     }
 }
 
@@ -56,6 +57,7 @@ function increaseSalary(n){
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
 
 function addFriend(obj){
+	this.friends++;
 	return 'You just became friend with ' + obj.name;
 }
 
@@ -63,6 +65,10 @@ function addFriend(obj){
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
 
 //modify your closure to tell mark how many friends does he have.
+
+function listFriends(){
+	return 'You have ' this.friends + ' friends'
+}
 
 // employeeA.listFriends(); // "you have 2 friends"
 
@@ -72,6 +78,7 @@ function addFriend(obj){
 //=============================================================================
 //lets create a pet class using OOP concept,
 // a - we need to create the pets (lets create only one for now), the invocation should take the name of the pet. 
+
 
 // var pet1 = Pet("doggy");
 
@@ -89,8 +96,41 @@ function addFriend(obj){
 
 // Write your code here .....
 
+function Pet(name){
+	var obj = {};
+	obj.name = name;
+	obj.addInfo = addInfo;
+	obj.increaseAge = increaseAge;
+	obj.availability = false;
+	obj.checkAvailability = checkAvailability;
+	obj.changeState = changeState;
+	return obj;
+}
+
+function addInfo(key, value){
+	return this[key] = value;
+}
+
+function increaseAge(n){
+	return 'Age is: ' + (this.age + n);
+}
+
+function checkAvailability(){
+	if(this.availability === true){
+		return true;
+	}
+	return false;
+}
+
+function changeState(){
+	return this.availability = !this.availability;
+}
+
+
 
 // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
+
+// Yes I am Sir!
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -121,6 +161,16 @@ function reduce(array, f, acc) {
 // Use the updated version of reduce to write a function max that returns the maximum number in an array of numbers. 
 
 // Write your code here .....
+
+function max(array){
+	var max = array[0];
+	return reduce(array, function(total, element, i){
+		if(element > max){
+			max = element;
+		}
+		return max;
+	});
+}
 
 
 

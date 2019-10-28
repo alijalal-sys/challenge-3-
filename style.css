@@ -1,0 +1,12 @@
+body {
+	background-color: purple;
+}
+
+h1 {
+	font-family: Tahoma;
+}
+
+input {
+	width: 100px;
+	height: 100px;
+}
