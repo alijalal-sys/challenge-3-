@@ -15,7 +15,8 @@ function employee(name, salary) {
     return {
         name: name,
         salary: salary,
-        sayHello: sayHello
+        sayHello: sayHello,
+        increaseSalary: increaseSalary
     }
 }
 
@@ -45,6 +46,10 @@ function sayHello(employee){
 
 //modify your closure and add function increaseSalary that increases the salary for the employee by n value and return it.
 //employeeA.increaseSalary(50); // "your salary is 150$"
+
+function increaseSalary(n){
+	return 'Your salary is: $' + (this.salary + n);
+}
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
