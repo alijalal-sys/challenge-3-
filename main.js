@@ -16,7 +16,8 @@ function employee(name, salary) {
         name: name,
         salary: salary,
         sayHello: sayHello,
-        increaseSalary: increaseSalary
+        increaseSalary: increaseSalary,
+        addFriend: addFriend
     }
 }
 
@@ -53,6 +54,10 @@ function increaseSalary(n){
 
 //how about we let jack and mark meet togther!
 //modify your closure and add function addFriend that accepts an object as a parameter, and let jack meets his friends.
+
+function addFriend(obj){
+	return 'You just became friend with ' + obj.name;
+}
 
 // employeeA.addFriend(employeeB); // "you just became friend with Mark"
 // employeeA.addFriend(employeeC); // "you just became friend with Mark and Sara"
