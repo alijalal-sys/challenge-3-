@@ -14,7 +14,8 @@
 function employee(name, salary) {
     return {
         name: name,
-        salary: salary
+        salary: salary,
+        sayHello: sayHello
     }
 }
 
@@ -34,6 +35,10 @@ function sayMyName(employee){
 
 
 //now modify that closure and add a function that says hello to the employee name;
+
+function sayHello(employee){
+	return 'Hello, ' + this.name;
+}
 
 // employeeA.sayHello(); // hello jack
 // employeeB.sayHello(); // hello Mark
