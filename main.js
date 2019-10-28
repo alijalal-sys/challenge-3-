@@ -25,6 +25,10 @@ var employeeC = employee("Sara", 150);
 
 //create a function when invoked returns the name of that employee.
 
+function sayMyName(employee){
+	return employee.name;
+} 
+
 // employeeA.sayMyName(); // "jack"
 // employeeB.sayMyName(); // "Mark"
 
